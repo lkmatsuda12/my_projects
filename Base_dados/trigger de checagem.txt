@@ -1,0 +1,40 @@
+
+--a funcao abaixo tem como objetivo checar se toda vez que for inserido uma linha de dados novos se esses dados são repetidos 
+--obs:rodar essa parte do codigo primeiro
+create or replace function checagem()
+returns trigger 
+LANGUAGE PLPGSQL
+as 
+$$
+declare 
+	--declaracao de variavel
+	fc numeric;
+begin 
+	--procura selecionar o dado de fechamento da linha em que os dados data e acao_id são iguais ao do input, depois pega esse dado de fechamento e coloca na variavel
+	--caso sejam dados totalmente novos, o select não retornará nada e o script simplesmente irá inserir os novos dados
+	select fechamento from dados_diários where data = new.data and acao_id = new.acao_id into fc ;
+	-- se esse dado colocado na variavel for diferente do dado de fechamento vindo do input
+	-- entao isso significar que houve a atualizacao da linha de dado que ja havi sido inserido anteriormente, ja que os dados data e nome sao os mesmos, mas o do fechamneto nao
+	-- entao essa linha sera deletada e substituida por uma nova, com o dado do fechamento atualizada
+	if fc <> new.fechamento then 
+		delete from dados_diários where data=new.data and acao_id = new.acao_id;
+	end if;
+	
+	return new;
+end;
+$$ 
+
+
+--rodar essa parte em segundo 
+create trigger t_inserir
+	before insert on dados_diários
+	for each row 
+	execute procedure checagem()
+	
+	
+	
+	
+	
+	
+
+
