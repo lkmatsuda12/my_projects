@@ -6,7 +6,7 @@ Após chegar no valor esperado do ativo em questão, ele é comparado ao valor r
 Muito importante enfatizar que essa estratégia visa principalmente a diminuição de perdas e não a maximização dos retornos, ou seja, se uma certa carteira tiver performance negativa, ao aplicar essa estratégia, e selecionar apenas algumas ações desta carteira, essas ações selecionadas darão perdas menores do que se considerasse a carteira toda.
 
 
-**2) Base_dados**: Desntro dessa pasta, há um scirpt chamado basedados.py e outro chamado tele_botpy. A ideia era que a partir desses dois scripts fosse possível criar uma base de dados postgresql (hospedado na cloud), contendo dados do mercado financeiro extraídos da plataforma da Comdinheiro; e criar um bot do telegram que daria um output de gráficos informativos construídos a partir dos dados dentro dessa base, ou simplesmente só retornasse os dados de forma pura.
+**2) Base_dados**: Dentro dessa pasta, há um scirpt chamado basedados.py e outro chamado tele_botpy. A ideia era que a partir desses dois scripts fosse possível criar uma base de dados postgresql (hospedado na cloud), contendo dados do mercado financeiro extraídos da plataforma da Comdinheiro; e criar um bot do telegram que daria um output de gráficos informativos construídos a partir dos dados dentro dessa base, ou simplesmente só retornasse os dados de forma pura.
 O basedados.py contém as funções necessárias para extrair dados do comdinheiro, dar input dos dados no postgresql, criar os gráficos financeiros.
 O tele_bot.py contém os comandos de função do bot do telegram.
 Além disso, há outros arquivos secundários na pasta, como triggers do postgresql para realizar boas práticas na entrada dos dados e um esquema de como foi montada a base.
