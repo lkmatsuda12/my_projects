@@ -14,6 +14,8 @@ O basedados.py contém as funções necessárias para extrair dados do comdinhei
 O tele_bot.py contém os comandos de função do bot do telegram.
 Além disso, há outros arquivos secundários na pasta, como triggers do postgresql para realizar boas práticas na entrada dos dados e um esquema de como foi montada a base.
 
-Link de tutorial utilizado para criar a base na aws: https://www.youtube.com/watch?v=VLpPLaGVJhI&list=LLL-iV73KQiBOciWHOBy8x-w&index=9
+*Link de tutorial utilizado para criar a base na aws:* https://www.youtube.com/watch?v=VLpPLaGVJhI&list=LLL-iV73KQiBOciWHOBy8x-w&index=9
 
-Link de como rodar o código no vm: https://www.youtube.com/watch?v=BYvKv3kM9pk&t=756s
+*Link de como rodar o código no vm:* https://www.youtube.com/watch?v=BYvKv3kM9pk&t=756s
+
+*Link de como usar bot do telegram com python:* https://www.youtube.com/watch?v=hOow3Omxm2U&t=937s
