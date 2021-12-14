@@ -1,4 +1,7 @@
 # My_projects
+
+![stack Overflow](http://lmsotfy.com/so.png)
+
 Just a taste of some of my own code projects in python.
 
 **1) Análise_Beta**: Script criado para testar uma estratégia que se baseia no cálculo do valor esperado de um ativo pela clássica fórmula do CAPM.
