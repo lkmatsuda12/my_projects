@@ -90,7 +90,6 @@ def list_tickers_command(update: Update, context: CallbackContext) -> None:
 
     list_tickers()
 
-    #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df.xlsx'
     path = '/home/ubuntu/arquivos/df.xlsx'
     update.message.reply_document(document=open(path, "rb"))
 
@@ -100,7 +99,6 @@ def list_index_command(update: Update, context: CallbackContext) -> None:
 
     list_index()
 
-    #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df.xlsx'
     path = '/home/ubuntu/arquivos/df.xlsx'
     update.message.reply_document(document=open(path, "rb"))
 
@@ -111,7 +109,6 @@ def list_companies_command(update: Update, context: CallbackContext) -> None:
 
     list_companies()
 
-    #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df.xlsx'
     path = '/home/ubuntu/arquivos/df.xlsx'
     update.message.reply_document(document=open(path, "rb"))
 
@@ -130,18 +127,15 @@ def ticker_daily_command(update: Update, context: CallbackContext) -> None:
 
 
         if formato == 'xlsx':
-            #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df_daily.xlsx'
             path = '/home/ubuntu/arquivos/df_daily.xlsx'
             update.message.reply_document(document=open(path, "rb"))
 
         elif formato == 'csv':
-            #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df_daily.csv'
             path = '/home/ubuntu/arquivos/df_daily.csv'
             update.message.reply_document(document=open(path, "rb"))
 
         elif formato == 'img':
             if len(objt)<=100:
-                #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df_daily.png'
                 path = '/home/ubuntu/arquivos/df_daily.png'
                 update.message.reply_photo(photo=open(path, "rb"))
             else:
@@ -150,7 +144,6 @@ def ticker_daily_command(update: Update, context: CallbackContext) -> None:
         ticker = context.args[0]
         get_ticker(ticker)
 
-        #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df.png'
         path = '/home/ubuntu/arquivos/df.png'
         update.message.reply_photo(photo=open(path, "rb"))
 
@@ -170,18 +163,15 @@ def index_daily_command(update: Update, context: CallbackContext) -> None:
 
 
         if formato == 'xlsx':
-            #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df_daily.xlsx'
             path = '/home/ubuntu/arquivos/df_daily.xlsx'
             update.message.reply_document(document=open(path, "rb"))
 
         elif formato == 'csv':
-           # path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df_daily.csv'
             path = '/home/ubuntu/arquivos/df_daily.csv'
             update.message.reply_document(document=open(path, "rb"))
 
         elif formato == 'img':
             if len(objt)<=100:
-                #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df_daily.png'
                 path = '/home/ubuntu/arquivos/df_daily.png'
                 update.message.reply_photo(photo=open(path, "rb"))
             else:
@@ -191,7 +181,6 @@ def index_daily_command(update: Update, context: CallbackContext) -> None:
         ticker = context.args[0]
         get_index(ticker)
 
-        #path = r'C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\df.png'
         path = '/home/ubuntu/arquivos/df.png'
         update.message.reply_photo(photo=open(path, "rb"))
 
@@ -208,7 +197,6 @@ def drawdown_command(update: Update, context: CallbackContext) -> None:
         df1 = index_daily("'CDI'", datainicial, datafinal, formato = "csv")
         print(drawdown(df, df1))
 
-        #path = r"C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\Drawdown.png"
         path = '/home/ubuntu/arquivos/Drawdown.png'
         update.message.reply_photo(photo=open(path, "rb"))
 
@@ -223,7 +211,6 @@ def volatility_command(update: Update, context: CallbackContext) -> None:
     df = ticker_daily(ticker, datainicial, datafinal, formato="csv")
     print(volatility(df))
 
-    #path = r"C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\Volatility.png"
     path = '/home/ubuntu/arquivos/Volatility.png'
     update.message.reply_photo(photo=open(path, "rb"))
 
@@ -238,7 +225,6 @@ def return_command(update: Update, context: CallbackContext) -> None:
     df1 = index_daily("'CDI'", datainicial, datafinal, formato="csv")
     print(returns(df, df1))
 
-    #path = r"C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\Return.png"
     path = '/home/ubuntu/arquivos/Return.png'
     update.message.reply_photo(photo=open(path, "rb"))
 
@@ -252,7 +238,6 @@ def return_application_command(update: Update, context: CallbackContext) -> None
     df = ticker_daily(ticker, datainicial, datafinal, formato="csv")
     print(return_application(df))
 
-    #path = r"C:\Users\Lucas\Desktop\FEA.dev\Quant\Base de Dados\Return_application.png"
     path = '/home/ubuntu/arquivos/Return_application.png'
     update.message.reply_photo(photo=open(path, "rb"))
 
@@ -267,7 +252,7 @@ def echo(update: Update, _: CallbackContext) -> None:
 def main() -> None:
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
-    updater = Updater("1822292826:AAF2D_Wf_FmxYFEzpD5VwSHidEdP605lcg8")
+    updater = Updater(token)
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
