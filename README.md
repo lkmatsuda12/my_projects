@@ -1,6 +1,6 @@
 # My_projects
 
-![stack Overflow](http://lmsotfy.com/so.png)
+![Banner](https://wallpaperaccess.com/full/2703803.jpg)
 
 Just a taste of some of my own code projects in python.
 
