@@ -13,9 +13,9 @@ import numpy as np
 
 
 database = ""
-password = "2Zy%tUuZnQnA"
-user = "postgres"
-host = "52.67.232.85"
+password = senha
+user = user
+host = host
 
 
 ###########################- FUNÇÕES BASE DE DADOS - ####################################################################
@@ -561,7 +561,7 @@ def extrair_cotacoes(ticker, datafinal, datainicial='01011993'):
 
     querystring = {"code": "import_data"}
 
-    payload = "username=feausp&password=2020feausp&URL=HistoricoCotacaoAcao001-" + ticker + "-" + datainicial + "-" + datafinal + "-1-1&format=json2"
+    payload = "username="+ user_comdinheiro +"&password="+ password_comdinheiro +"&URL=HistoricoCotacaoAcao001-" + ticker + "-" + datainicial + "-" + datafinal + "-1-1&format=json2"
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 
     response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
@@ -626,16 +626,16 @@ def extrair_indice(indice, datafinal, datainicial='01011993'):
     ipca = 0
     querystring = {"code": "import_data"}
     if indice == "cdi":
-        payload = "username=feausp&password=2020feausp&URL=HistoricoCotacao002.php%3F%26x%3DCDI%26data_ini%3D" + datainicial + "%26data_fim%3D" + datafinal + "%26pagina%3D1%26d%3DMOEDA_ORIGINAL%26g%3D0%26m%3D0%26info_desejada%3Dretorno%26retorno%3Ddiscreto%26tipo_data%3Ddu_br%26tipo_ajuste%3Dtodosajustes%26num_casas%3D2%26enviar_email%3D0%26ordem_legenda%3D1%26cabecalho_excel%3Dmodo1%26classes_ativos%3D18ce53un18f%26ordem_data%3D0%26rent_acum%3Drent_acum%26minY%3D%26maxY%3D%26deltaY%3D%26preco_nd_ant%3D0%26base_num_indice%3D100%26flag_num_indice%3D0%26eixo_x%3DData%26startX%3D0%26max_list_size%3D20%26line_width%3D2%26titulo_grafico%3D%26legenda_eixoy%3D%26tipo_grafico%3Dline&format=json2"
+        payload = "username="+ user_comdinheiro +"&password="+ password_comdinheiro +"&URL=HistoricoCotacao002.php%3F%26x%3DCDI%26data_ini%3D" + datainicial + "%26data_fim%3D" + datafinal + "%26pagina%3D1%26d%3DMOEDA_ORIGINAL%26g%3D0%26m%3D0%26info_desejada%3Dretorno%26retorno%3Ddiscreto%26tipo_data%3Ddu_br%26tipo_ajuste%3Dtodosajustes%26num_casas%3D2%26enviar_email%3D0%26ordem_legenda%3D1%26cabecalho_excel%3Dmodo1%26classes_ativos%3D18ce53un18f%26ordem_data%3D0%26rent_acum%3Drent_acum%26minY%3D%26maxY%3D%26deltaY%3D%26preco_nd_ant%3D0%26base_num_indice%3D100%26flag_num_indice%3D0%26eixo_x%3DData%26startX%3D0%26max_list_size%3D20%26line_width%3D2%26titulo_grafico%3D%26legenda_eixoy%3D%26tipo_grafico%3Dline&format=json2"
         cdi = 1
     elif indice == "ibov":
-        payload = "username=feausp&password=2020feausp&URL=HistoricoCotacao002.php%3F%26x%3DIBOV%2B%26data_ini%3D" + datainicial + "%26data_fim%3D" + datafinal + "%26pagina%3D1%26d%3DMOEDA_ORIGINAL%26g%3D0%26m%3D0%26info_desejada%3Dretorno%26retorno%3Ddiscreto%26tipo_data%3Ddu_br%26tipo_ajuste%3Dtodosajustes%26num_casas%3D2%26enviar_email%3D0%26ordem_legenda%3D1%26cabecalho_excel%3Dmodo1%26classes_ativos%3D18ce53un18f%26ordem_data%3D0%26rent_acum%3Drent_acum%26minY%3D%26maxY%3D%26deltaY%3D%26preco_nd_ant%3D0%26base_num_indice%3D100%26flag_num_indice%3D0%26eixo_x%3DData%26startX%3D0%26max_list_size%3D20%26line_width%3D2%26titulo_grafico%3D%26legenda_eixoy%3D%26tipo_grafico%3Dline&format=json2"
+        payload = "username="+ user_comdinheiro +"&password="+ password_comdinheiro +"&URL=HistoricoCotacao002.php%3F%26x%3DIBOV%2B%26data_ini%3D" + datainicial + "%26data_fim%3D" + datafinal + "%26pagina%3D1%26d%3DMOEDA_ORIGINAL%26g%3D0%26m%3D0%26info_desejada%3Dretorno%26retorno%3Ddiscreto%26tipo_data%3Ddu_br%26tipo_ajuste%3Dtodosajustes%26num_casas%3D2%26enviar_email%3D0%26ordem_legenda%3D1%26cabecalho_excel%3Dmodo1%26classes_ativos%3D18ce53un18f%26ordem_data%3D0%26rent_acum%3Drent_acum%26minY%3D%26maxY%3D%26deltaY%3D%26preco_nd_ant%3D0%26base_num_indice%3D100%26flag_num_indice%3D0%26eixo_x%3DData%26startX%3D0%26max_list_size%3D20%26line_width%3D2%26titulo_grafico%3D%26legenda_eixoy%3D%26tipo_grafico%3Dline&format=json2"
         ibov = 1
     elif indice == "ptax":
-        payload = "username=feausp&password=2020feausp&URL=HistoricoCotacao002.php%3F%26x%3DPTAXC%26data_ini%3D" + datainicial + "26data_fim%3D" + datafinal + "%26pagina%3D1%26d%3DMOEDA_ORIGINAL%26g%3D0%26m%3D0%26info_desejada%3Dretorno%26retorno%3Ddiscreto%26tipo_data%3Ddu_br%26tipo_ajuste%3Dtodosajustes%26num_casas%3D2%26enviar_email%3D0%26ordem_legenda%3D1%26cabecalho_excel%3Dmodo1%26classes_ativos%3Djpia9pm8jr3%26ordem_data%3D0%26rent_acum%3Drent_acum%26minY%3D%26maxY%3D%26deltaY%3D%26preco_nd_ant%3D0%26base_num_indice%3D100%26flag_num_indice%3D0%26eixo_x%3DData%26startX%3D0%26max_list_size%3D20%26line_width%3D2%26titulo_grafico%3D%26legenda_eixoy%3D%26tipo_grafico%3Dline&format=json2"
+        payload = "username="+ user_comdinheiro +"&password="+ password_comdinheiro +"&URL=HistoricoCotacao002.php%3F%26x%3DPTAXC%26data_ini%3D" + datainicial + "26data_fim%3D" + datafinal + "%26pagina%3D1%26d%3DMOEDA_ORIGINAL%26g%3D0%26m%3D0%26info_desejada%3Dretorno%26retorno%3Ddiscreto%26tipo_data%3Ddu_br%26tipo_ajuste%3Dtodosajustes%26num_casas%3D2%26enviar_email%3D0%26ordem_legenda%3D1%26cabecalho_excel%3Dmodo1%26classes_ativos%3Djpia9pm8jr3%26ordem_data%3D0%26rent_acum%3Drent_acum%26minY%3D%26maxY%3D%26deltaY%3D%26preco_nd_ant%3D0%26base_num_indice%3D100%26flag_num_indice%3D0%26eixo_x%3DData%26startX%3D0%26max_list_size%3D20%26line_width%3D2%26titulo_grafico%3D%26legenda_eixoy%3D%26tipo_grafico%3Dline&format=json2"
         ptax = 1
     elif indice == "ipca":
-        payload = "username=feausp&password=2020feausp&URL=HistoricoCotacao002.php%3F%26x%3DIBGE_IPCAd%2B%26data_ini%3D" + datainicial + "%26data_fim%3D" + datafinal + "%26pagina%3D1%26d%3DMOEDA_ORIGINAL%26g%3D0%26m%3D0%26info_desejada%3Dretorno%26retorno%3Ddiscreto%26tipo_data%3Ddu_br%26tipo_ajuste%3Dtodosajustes%26num_casas%3D8%26enviar_email%3D0%26ordem_legenda%3D1%26cabecalho_excel%3Dmodo1%26classes_ativos%3Djpia9pm8jr3%26ordem_data%3D0%26rent_acum%3Drent_acum%26minY%3D%26maxY%3D%26deltaY%3D%26preco_nd_ant%3D0%26base_num_indice%3D100%26flag_num_indice%3D0%26eixo_x%3DData%26startX%3D0%26max_list_size%3D20%26line_width%3D2%26titulo_grafico%3D%26legenda_eixoy%3D%26tipo_grafico%3Dline&format=json2"
+        payload = "username="+ user_comdinheiro +"&password="+ password_comdinheiro +"&URL=HistoricoCotacao002.php%3F%26x%3DIBGE_IPCAd%2B%26data_ini%3D" + datainicial + "%26data_fim%3D" + datafinal + "%26pagina%3D1%26d%3DMOEDA_ORIGINAL%26g%3D0%26m%3D0%26info_desejada%3Dretorno%26retorno%3Ddiscreto%26tipo_data%3Ddu_br%26tipo_ajuste%3Dtodosajustes%26num_casas%3D8%26enviar_email%3D0%26ordem_legenda%3D1%26cabecalho_excel%3Dmodo1%26classes_ativos%3Djpia9pm8jr3%26ordem_data%3D0%26rent_acum%3Drent_acum%26minY%3D%26maxY%3D%26deltaY%3D%26preco_nd_ant%3D0%26base_num_indice%3D100%26flag_num_indice%3D0%26eixo_x%3DData%26startX%3D0%26max_list_size%3D20%26line_width%3D2%26titulo_grafico%3D%26legenda_eixoy%3D%26tipo_grafico%3Dline&format=json2"
         ipca = 1
 
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -717,7 +717,6 @@ def extrair_indice(indice, datafinal, datainicial='01011993'):
 
 if __name__ == '__main__':
     #dic = fetch_database()
-    dic = {'AALR3':1,}
-    tickers(dic)
+    #tickers(dic)
     #df = extrair_indice('ipca', '06112021')
     #execute_mogrify(df, 'índices_diários', 'índice')
